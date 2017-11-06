@@ -11,7 +11,8 @@ module Alert
     before_save :update_led
     
     def index
-    end 
+      @alerts = ::Alert::Alert.all
+    end
     
     def sync
       Apiotics.sync(self)
